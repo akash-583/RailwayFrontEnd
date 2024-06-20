@@ -1,0 +1,23 @@
+
+/* .img{
+    background-image: url('');
+   
+} */
+
+.main1{
+    background-image: url('/assets/Frontpage.png');
+}
+/* Define the custom card position */
+.custom-card {
+    position: absolute;
+    top: 150px; /* Adjust the top position as needed */
+    right: 70px; /* Adjust the right position as needed */
+  }
+  
+  /* Optionally, you can add styles to the card or modify its appearance */
+  .custom-card .card {
+    width: 300px; /* Adjust the card width as needed */
+    height: 400px;
+    /* Add any other styles as desired */
+  }
+  

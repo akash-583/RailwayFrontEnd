@@ -1,0 +1,14 @@
+.bg{
+    background-image: url("/assets/money.jpg");
+    background-repeat: no-repeat;
+}
+.heading{
+    color: darkblue;
+    font-weight: 900;
+}
+.bg1{
+    height: 100vh;
+}
+.razorpay-payment-modal-backdrop {
+    background-color: #f0f0f0; /* Change this color to your desired background color */
+  }

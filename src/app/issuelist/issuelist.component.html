@@ -1,0 +1,134 @@
+
+
+<!-- **************************************************************************************** -->
+
+
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+  <div class="modal-dialog">
+
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel" ><b>Issue Details</b></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+       
+
+        <form [formGroup]="formValue">
+          <div class="mb-3">
+            <label for="issue" class="form-label"><b>Issue</b></label>
+            <textarea type="textbox" formControlName="issue" rows="4" id="issue" class="form-control"
+              placeholder="Enter Issue (min 8, max 250 characters)"></textarea>
+            <div *ngIf="formValue.get('issue')?.invalid && formValue.get('issue')?.touched" class="error-message">
+              <div *ngIf="formValue.get('issue')?.hasError('required')">Issue is required</div>
+              <div *ngIf="formValue.get('issue')?.hasError('minlength')">Issue should be at least 8 characters</div>
+              <div *ngIf="formValue.get('issue')?.hasError('maxlength')">Issue should not exceed 250 characters</div>
+            </div>
+          </div>
+          
+          <!-- Status Field (Auto-populated) -->
+          <div class="mb-3">
+            <label for="status" class="form-label"><b>Status</b></label>
+            <select formControlName="status" id="status" class="form-control">
+              <option value="Processing">Processing</option>
+              <option value="Resolved">Resolved</option>
+            </select>
+          </div>
+          
+        
+          <!-- Solution Field (Auto-populated) -->
+          <div class="mb-3">
+            <label for="solution" class="form-label"><b>Solution</b></label>
+            <textarea type="textbox" formControlName="solution" rows="4" id="solution" class="form-control"
+              placeholder="Enter Solution"></textarea>
+          </div>
+        
+          <!-- Save button -->
+       
+        </form>
+        
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" (click)="updateIssue()">Update</button></div>
+
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<!-- .................................................................................. -->
+
+<app-navbar></app-navbar>
+
+
+<!-- <div class="button">
+  <button mat-raised-button color="primary" *ngIf="isRole === 'Admin'" routerLink="/adminLogin">
+    <mat-icon>keyboard_return</mat-icon> GoBack
+  </button>
+  <button mat-raised-button color="primary" *ngIf="isRole === 'User'" routerLink="/userLogin">
+    <mat-icon>keyboard_return</mat-icon> GoBack
+  </button>
+  </div>   -->
+<!-- <br>  <h3 style="text-align:center ;">Issue List</h3>
+<br>
+<div class="container1">
+  <hr>
+  <table class="table text-center">
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>Issue</th>
+        <th>Status</th>
+        <th>solution</th>
+        <th *ngIf="isRole === 'Admin'">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of dataSource">
+        <td>{{ row.username }}</td>
+        <td>{{ row.issue }}</td>
+        <td>{{ row.status }}</td>
+        <td>{{ row.solution }}</td>
+        <td>
+          <button *ngIf="isRole === 'Admin'" class="btn btn-primary" (click)="EditForm(row.issue)" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+            edit
+          </button>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot *ngIf="dataSource.length === 0">
+      <tr>
+        <td class="text-center" colspan="9">No data matching the filter</td>
+      </tr>
+    </tfoot>
+  </table> -->
+  <br>
+
+  <div class="border-dark mb-3" id="content1">
+  <h1 class="card-header border-dark text-center" >Issue List</h1>
+  <div class="row1 main1">
+    <br>
+    <div *ngFor="let row of dataSource" class="col-md-4 card card-row" style="margin-right: 1px;
+    margin-bottom: 7px;margin-left: 10px;width: 300px;height: 275px;">
+      <div class="card-header">
+        <b>Username: {{ row.username}}</b>
+      </div>
+      <div class="card-body" align="left">
+        <p class="card-text"><b>Issue:</b> {{ row.issue }}</p>
+        <p class="card-text"><b>Status:</b>{{ row.status }}</p>
+        <p class="card-text"><b>Solution:</b> {{ row.solution}}</p>
+        <p class="card-text" *ngIf="!isPrint" [hidden]="isRole !== 'Admin'"><b>Update the issue:</b><button [hidden]="isRole !== 'Admin'"  (click)="EditForm(row)" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+          <img src="assets\pencil-fill.svg">
+        </button></p>
+        </div>
+    </div>
+    <br>
+  </div>
+  </div>

@@ -1,0 +1,38 @@
+
+
+.main1{
+    background-image: url('/assets/Frontpage.png');
+ 
+}
+.custom-card {
+    position: absolute;
+    top: 100px;
+    right: 70px; 
+  }
+  
+  .custom-card .card {
+    width: 350px; 
+    height: 400px;
+  }
+  .error-message {
+    color: red;
+    font-style: italic;
+  }
+  .custom { 
+    width: 900px; 
+    min-height: 500px; 
+    right: 100px;
+  }
+.card-row{
+  display: inline-block;
+}
+.modal-body{
+  background-image: url('/assets/white-gray-geometric-pattern-background-vector_53876-136510.webp');
+}
+.small-button {
+  padding: 5px 10px;
+  font-size: 12px;
+}
+pre{
+  font-family: sans-serif;
+}

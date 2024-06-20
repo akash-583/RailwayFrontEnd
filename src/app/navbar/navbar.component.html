@@ -1,0 +1,172 @@
+<!-- <div class="modal fade" id="exampleModalp" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+  <div class="modal-dialog">
+
+    <div class="modal-content card-body">
+
+      <div class="modal-header ">
+
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Update Password</h1>
+
+        <div class="modal-body">
+          <form [formGroup]="formValue">
+            <div class="mb-3">
+              <label for="password" class="form-label"><b>Password</b></label>
+              <input type="password" formControlName="password" id="password" class="form-control"
+                placeholder="Enter New Password" />
+              <div *ngIf="formValue.get('password')?.invalid && formValue.get('password')?.touched"
+                class="error-message">
+                <div *ngIf="formValue.get('password')?.hasError('required')">Password is required</div>
+                <div *ngIf="formValue.get('password')?.hasError('minlength')">Password should be at least 8 characters
+                  long
+                </div>
+                <div *ngIf="formValue.get('password')?.hasError('pattern')">Password should include at least one
+                  uppercase
+                  letter, one lowercase letter, one digit, and one special character</div>
+              </div>
+            </div>
+
+          </form>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-footer">
+
+
+        <button type="button" (click)="updatepassword()" routerLink="/trainList" class="btn btn-primary">Save
+          changes</button>
+
+      </div>
+
+    </div>
+  </div>
+</div> -->
+
+ <div class="modal fade" id="exampleModalp" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+<div class="modal-dialog">
+    <div class="modal-content card-body">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Update Password</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+        <div class="modal-body">
+          <form [formGroup]="formValue">
+            <div class="mb-3">
+              <label for="password" class="form-label"><b>Password</b></label>
+              <input type="password" formControlName="password" id="password" class="form-control"
+                placeholder="Enter New Password" />
+              <div *ngIf="formValue.get('password')?.invalid && formValue.get('password')?.touched"
+                class="error-message">
+                <div *ngIf="formValue.get('password')?.hasError('required')">Password is required</div>
+                <div *ngIf="formValue.get('password')?.hasError('minlength')">Password should be at least 8 characters
+                  long
+                </div>
+                <div *ngIf="formValue.get('password')?.hasError('pattern')">Password should include at least one
+                  uppercase
+                  letter, one lowercase letter, one digit, and one special character</div>
+              </div>
+            </div>
+
+          </form>
+        </div>
+      
+
+      <div class="modal-footer">
+
+
+        <button type="button" (click)="updatepassword()"  class="btn btn-primary">Save
+          changes</button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div> 
+
+
+<!-- ************************************************************************************ -->
+<nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+    <a class="navbar-brand" *ngIf="isRole === 'Admin'" routerLink="/adminlogin"><img src="assets/download.png" alt="Bootstrap" width="45" height="45" style=" border-radius:48% ;"></a>
+    <a class="navbar-brand" *ngIf="isRole === 'User'" routerLink="/homepage"><img src="assets/download.png" alt="Bootstrap" width="45" height="45" style=" border-radius:48% ;"></a>
+    <a class="navbar-brand" *ngIf="!isLoggedIn" routerLink="/homepage"><img src="assets/download.png" alt="Bootstrap" width="45" height="45" style=" border-radius:48% ;"></a>
+
+    <a class="navbar-brand" *ngIf="isRole === 'isLoggedIn'" routerLink="/homepage"><img src="assets/download.png" alt="Bootstrap" width="45" height="45"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+<!-- <ng-container *ngIf="!isLoggedIn">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" routerLink="/trainList">Train List</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" routerLink="/searching">Search Train</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" routerLink="/login">Login</a>
+          </li>
+
+        </ng-container> -->
+
+        <ng-container *ngIf="isLoggedIn">
+          <ng-container *ngIf="isRole === 'Admin'">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" routerLink="/trainList">Train List</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" routerLink="/bookinglist">Booking List</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" routerLink="/userlist">User List</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" routerLink="/issuelist">Issue List</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" routerLink="/paymentlist">Payment List</a>
+            </li>
+          </ng-container>
+
+          <ng-container *ngIf="isRole === 'User'">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" routerLink="/trainList">Train List</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" routerLink="/bookinglist">My Bookings</a>
+            </li>
+          </ng-container>
+
+        </ng-container>
+      </ul>
+  </div>
+    <div class="d-flex" *ngIf="!isLoggedIn">
+      <button class="btn btn-danger" routerLink="/login">Login/Register</button>
+    </div>
+    <!-- <div class="d-flex" *ngIf="isLoggedIn">
+      <button class="btn btn-danger" (click)="handleLogout()">Logout</button>
+    </div> -->
+    <div class="d-flex profile" *ngIf="isLoggedIn">
+      <div class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false" style="color: aliceblue;">
+          Welcome {{username}}
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" routerLink="/profile">Profile</a>
+          <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModalp">Update Password</a>
+          <a class="dropdown-item" routerLink="/issuelist" *ngIf="isRole === 'User'">Issue List</a>
+          <a class="dropdown-item" (click)="handleLogout()">Logout</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  

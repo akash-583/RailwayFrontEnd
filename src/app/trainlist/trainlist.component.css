@@ -1,0 +1,17 @@
+.error-message {
+    color: red;
+    font-style: italic;
+  }
+  .card-row {
+    display: inline-block;
+    /* Add any other CSS styles you need */
+}   .small-button {
+  padding: 5px 10px;
+  font-size: 12px;
+}
+.card-body{
+  background-image: url('/assets/white-gray-geometric-pattern-background-vector_53876-136510.webp');
+}
+.modal-content{
+  background-image: url('/assets/white-gray-geometric-pattern-background-vector_53876-136510.webp');
+}

@@ -1,0 +1,27 @@
+<app-navbar></app-navbar>
+<br>
+<button class="btn btn-secondary" *ngIf="isRole === 'Admin'" (click)="printPage1('content1')"> Click here to download the list</button>
+
+<div  id="content1">
+  <h1 class="card-header border-dark text-center">User List</h1>
+  <br>
+  <div class="row1 main1" >
+    <div *ngFor="let user of dataSource" class="col-md-4 card card-row" style="margin-right: 1px;
+    margin-bottom: 4px;margin-left: 2px;width: 300px;">
+      <div class="card-header">
+        <b class="d-flex">Username: {{ user.username }}</b>
+      </div>
+      <div class="card-body" align="left">
+        <p class="card-text"><b>Role:</b> {{ user.role }}</p>
+        <p class="card-text"><b>Email: </b>{{ user.email }}</p>
+        <p class="card-text"><b>Gender:</b> {{ user.gender }}</p>
+        <img *ngIf="user.gender === 'Male'; else femaleImage" src="assets/Male.jpg" alt="Male" width="100px" />
+        <ng-template #femaleImage>
+          <img src="assets/Female.jpg" alt="Female" width="100px" height="100px"/>
+        </ng-template>
+        <p class="card-text"><b>Age:</b> {{ user.age }}</p>
+        <p class="card-text"><b>Country:</b> {{ user.country }}</p>
+      </div>
+    </div>
+  </div>
+</div>

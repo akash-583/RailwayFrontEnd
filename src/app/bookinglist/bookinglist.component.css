@@ -1,0 +1,16 @@
+.card-row {
+    display: inline-block;
+    /* Add any other CSS styles you need */
+}
+.email-color{
+    color: rgb(85, 12, 221);
+}
+.modal{
+    background-color: rgba(0, 0, 0, 0.5); /* Change the alpha value (0.5) to control transparency */
+}
+.card-body{
+    background-image: url('/assets/white-gray-geometric-pattern-background-vector_53876-136510.webp');
+}
+.modal-body{
+    background-image: url('/assets/white-gray-geometric-pattern-background-vector_53876-136510.webp');
+}

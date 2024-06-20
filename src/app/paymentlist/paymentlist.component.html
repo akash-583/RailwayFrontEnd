@@ -1,0 +1,23 @@
+<app-navbar></app-navbar>
+
+<br>
+<button class="btn btn-secondary" *ngIf="isRole === 'Admin'" (click)="printPage1('content1')"> Click here to download the list</button>
+    <div class=" border-dark mb-3 card-row" id="content1">
+    <h1 class="card-header border-dark text-center" >Payment List</h1>
+    <br>
+    <div class="row1 main1">
+      <div *ngFor="let row of dataSource" class="col-md-4 card card-row" style="
+      margin-bottom: 7px;margin-left:5px;width: 400px;">
+        <div class="card-header">
+          <b>TransactionId: {{ row.transactionId }}</b>
+          
+        </div>
+        <div class="card-body" align="left">
+          <p class="card-text"><b>BookingId:</b> {{ row.bookingId }}</p>
+          <p class="card-text"><b>Username:</b>{{ row.username }}</p>
+          <p class="card-text"><b>Amount:</b> {{ row.amount }}</p>
+          <p class="card-text"><b>TransactionStatus:</b>{{ row.transactionStatus }}</p>
+        </div>
+      </div>
+    </div>
+    </div>

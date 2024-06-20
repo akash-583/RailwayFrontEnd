@@ -1,0 +1,11 @@
+.card-row{
+    display: inline-block;
+}
+.card-body{
+    background-image: url('/assets/white-gray-geometric-pattern-background-vector_53876-136510.webp');
+}
+
+
+.modal-content{
+    background-image: url('/assets/white-gray-geometric-pattern-background-vector_53876-136510.webp');
+}

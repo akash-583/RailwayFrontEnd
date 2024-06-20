@@ -1,0 +1,19 @@
+
+.container{
+    background-image: url('/assets/TunnelZoom-small.jpg');
+    width: 2000px;
+
+}
+.custom-card {
+    position: absolute;
+    top: 150px;
+    right: 70px; 
+
+  }
+  .error-message {
+    color: red;
+    font-style: italic;
+  }
+  .card-body{
+    background-image: url('/assets/white-gray-geometric-pattern-background-vector_53876-136510.webp');
+}

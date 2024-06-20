@@ -1,0 +1,56 @@
+<app-navbar></app-navbar>
+<!-- ------------------------------------- -->
+<div class="container">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+<br>  <br>  <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+    <br>  <br>  <br>
+    <br>
+    <br>
+    <br>
+    <br>
+<div class="card custom-card" style="width: 400px;height:400px;">
+    <h5 class="card-header text-center" >Issue Form</h5>
+    <div class="card-body">
+        <form [formGroup]="issueForm" (ngSubmit)="submitForm()">
+            <div class="c">
+              <!-- <h1><b>Issue Form</b></h1> -->
+            <!-- Issue Field -->
+            <div class="mb-3">
+              <label for="issue" class="form-label"><b>Issue</b></label>
+              <textarea type="textbox" formControlName="issue" rows="4" id="issue" class="form-control"
+                placeholder="Enter Issue (min 8, max 250 characters)"></textarea>
+              <div *ngIf="issueForm.get('issue')?.invalid && issueForm.get('issue')?.touched" class="error-message">
+                <div *ngIf="issueForm.get('issue')?.hasError('required')">Issue is required</div>
+                <div *ngIf="issueForm.get('issue')?.hasError('minlength')">Issue should be at least 8 characters</div>
+                <div *ngIf="issueForm.get('issue')?.hasError('maxlength')">Issue should not exceed 250 characters</div>
+              </div>
+            </div>
+      
+            <!-- Status Field (Auto-populated) -->
+            <div class="mb-3">
+              <label for="status" class="form-label"><b>Status</b></label>
+              <input type="text" formControlName="status" id="status" class="form-control" readonly />
+            </div>
+      
+            <div>
+              <button type="submit" class="btn btn-success">Submit</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <button type="button" class="btn btn-secondary" routerLink="/home">Cancel</button>
+            </div>
+            </div>
+          </form>
+     
+    </div>
+  </div>
+</div>

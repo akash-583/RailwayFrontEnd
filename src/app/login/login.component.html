@@ -1,0 +1,75 @@
+<div class="main1">
+
+    <marquee behavior="scroll" direction="left" style="font-weight: bold;">Did you Know that Indian Railways (IR) carries over 25 million passengers daily which is perhaps more than the entire population of Australia, New Zealand and Tasmania put together.Happy journey.</marquee>
+  
+      <br><br><br><br>
+  
+      <br>
+      <br>
+  
+  
+      <br>
+      <br>
+      <br>
+      <br>
+  
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br><br>
+      <br> 
+        <!-- <div class="container">
+          <div class="custom-card">
+            <h5 class="card-header text-center">Register Form</h5>
+      <div class="card-body">
+       
+       
+      </div>
+          </div>
+        </div> -->
+        <div class="card translate-right border-dark  mb-3 custom-card" style="width: 400px;height: 450px;">
+          <div class="card-body">
+            <h5 class="card-header border-dark text-center">Login</h5>
+            <br>
+           <div class="container">
+            <form [formGroup]="signinUser" >
+              <div class="mb-3">
+                <label for="username" class="form-label"><b>UserName</b></label>
+                <input type="text" formControlName="username" id="username" class="form-control" placeholder="Enter UserName" />
+                <div *ngIf="signinUser.controls['username'].invalid && signinUser.controls['username'].touched"
+                  class="error-message">Please Enter valid</div>
+              </div>
+        
+              <div class="mb-3" style="position: relative;">
+                <label for="password" class="form-label title"><b>Password</b></label>
+                <input type="password" formControlName="password" class="form-control" id="password"
+                  placeholder="Enter Password">
+                <div *ngIf="signinUser.get('password')?.invalid && signinUser.get('password')?.touched" class="error-message">
+                  Required</div>
+              </div>
+            </form>
+           </div>
+           <br>
+           <div class="container">
+          <button class="btn btn-warning" (click)="submitForm()">Login</button>&nbsp;&nbsp;&nbsp;&nbsp;
+          <button type="button" class="btn btn-danger cancel" (click)="goBack()">Cancel</button>
+           </div>
+           <br>
+           <br>
+           <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;If you are a new user? <a routerLink="/register"><b>Click here</b></a> to sign up.
+          </p>
+          </div>
+        </div>
+  </div>
+  

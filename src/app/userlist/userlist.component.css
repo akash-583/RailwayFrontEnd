@@ -1,0 +1,7 @@
+.card-body{
+    background-image: url('/assets/white-gray-geometric-pattern-background-vector_53876-136510.webp');
+}
+.card-row {
+    display: inline-block;
+    /* Add any other CSS styles you need */
+}

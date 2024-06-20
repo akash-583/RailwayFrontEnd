@@ -1,0 +1,19 @@
+.error-message {
+    color: red;
+    font-style: italic;
+  }
+  .custom-card {
+    position: absolute;
+    top: 150px;
+    right: 70px; 
+
+  }
+  .container{
+    background-image: url('/assets/Series-N700S-J2.jpg');
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+.card{
+  background-image: url('/assets/white-gray-geometric-pattern-background-vector_53876-136510.webp');
+}

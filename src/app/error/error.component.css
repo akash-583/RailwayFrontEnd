@@ -1,0 +1,47 @@
+.bg {
+    /* margin: 0; */
+    padding: 0px;
+    background-image: url("https://www.wpoven.com/blog/wp-content/uploads/2023/05/Error-401.png");
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
+    /* background-image: no-repeat; */
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 100px;
+  }
+  
+  .header {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Remove justify-content and adjust margin-top for the login button */
+  }
+  
+  .header h1 {
+    margin: 0;
+  }
+  
+  .header p {
+    margin: 0; /* Adjust margin to make paragraph closer to the margin */
+    margin-top: 10px; /* Add a little space between heading and paragraph */
+  }
+  
+  h1 {
+    font-size: 36px;
+    color: #ff3333; /* or any other color you prefer */
+  }
+ 
+  p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
